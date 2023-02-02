@@ -1,7 +1,15 @@
 const board = document.querySelector('#board')
 const SQuares_number = 500
 
-const colors = ['red', 'blue', 'green', 'yellow', 'purple']
+
+function generetRandomColor(){
+    const hexCodes = '0123456789ABCDEF'
+    let color = ''
+    for(let i = 0; i < 6; i++){
+        color += hexCodes[Math.floor(Math.random() * hexCodes.length)]
+    }
+    return '#' + color
+}
 
 for (let i = 0; i < SQuares_number; i++){
     const square =document.createElement('div')
@@ -14,9 +22,8 @@ for (let i = 0; i < SQuares_number; i++){
 }
 
 function setColor(element) {
-    const color =getRandomColor()
-    element.style.backgroundColor = color
-    element.style.boxShadow = `0 0 2px ${color}, 0 0 10px ${color}`
+    element.style.backgroundColor = generetRandomColor()
+    element.style.boxShadow = `0 0 2px ${generetRandomColor()}, 0 0 10px ${generetRandomColor()}`
 }
 
 function removeColor(element) {
@@ -24,7 +31,3 @@ function removeColor(element) {
     element.style.boxShadow = `0 0 2px #000`
 }
 
-function getRandomColor() {
-  const index = Math.floor(Math.random() * colors.length)
-  return colors[index]
-}
