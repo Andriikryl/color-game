@@ -19,9 +19,11 @@ body {
   align-items: center;
   flex-wrap: wrap;
   max-width: 400px;
+  
 }
 
 .square{
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
   width: 16px;
   height: 16px;
   background: #1d1d1d;
